@@ -1,4 +1,4 @@
-FROM xataz/mono:5
+FROM raymondschnyder/mono:latest
 
 ARG MEDIAINFO_VER=0.7.98
 ARG EMBY_VER=3.2.33.0
