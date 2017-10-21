@@ -1,11 +1,6 @@
 # Emby Image
 
-[![Build Status](https://drone.xataz.net/api/badges/xataz/docker-emby/status.svg)](https://drone.xataz.net/xataz/docker-emby)
-[![](https://images.microbadger.com/badges/image/xataz/emby.svg)](https://microbadger.com/images/xataz/emby "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/xataz/emby.svg)](https://microbadger.com/images/xataz/emby "Get your own version badge on microbadger.com")
-
-> This image is build and push with [drone.io](https://github.com/drone/drone), a circle-ci like self-hosted.
-> If you don't trust, you can build yourself.
+#THIS IMAGE IS BUILD WITH THE LATEST SUPPORTED MONO 4.8 FROM THE EMBY TEAM!
 
 ## Tag available
 * latest, 3.2.33.0, 3.2, 3 [(Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/emby/Dockerfile)
@@ -22,7 +17,7 @@ It features a REST-based API with built-in documention to facilitate client deve
 ## Build Image
 
 ```shell
-docker build -t xataz/emby github.com/xataz/dockerfiles.git#master:emby
+docker build -t xataz/emby github.com/raymondschyder/docker-emby.git
 ```
 
 ## Configuration
@@ -39,7 +34,7 @@ docker build -t xataz/emby github.com/xataz/dockerfiles.git#master:emby
 ## Usage
 ### Speed launch
 ```shell
-docker run -d -p 8096 xataz/emby
+docker run -d -p 8096 raymondschnyder/emby
 ```
 URI access : http://XX.XX.XX.XX:8096
 
@@ -50,7 +45,7 @@ docker run -d -p 8096 \
 	-v /docker/Media:/Media \
 	-e UID=1001 \
 	-e GID=1001 \
-	xataz/emby
+	raymondschnyder/emby
 ```
 URI access : http://XX.XX.XX.XX:8096
 
