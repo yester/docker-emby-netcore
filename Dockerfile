@@ -1,4 +1,4 @@
-FROM raymondschnyder/mono:latest
+FROM nfxus/mono:latest
 
 ARG MEDIAINFO_VER=0.7.98
 ARG EMBY_VER=3.2.33.0
@@ -20,14 +20,18 @@ RUN export BUILD_DEPS="build-base \
                         xz" \
     && apk add --no-cache imagemagick \
 	            sqlite-libs \
-	            ffmpeg \
 	            s6 \
                 su-exec \
                 $BUILD_DEPS \
     && wget http://mediaarea.net/download/binary/mediainfo/${MEDIAINFO_VER}/MediaInfo_CLI_${MEDIAINFO_VER}_GNU_FromSource.tar.xz -O /tmp/MediaInfo_CLI_${MEDIAINFO_VER}_GNU_FromSource.tar.xz \
     && wget http://mediaarea.net/download/binary/libmediainfo0/${MEDIAINFO_VER}/MediaInfo_DLL_${MEDIAINFO_VER}_GNU_FromSource.tar.xz -O /tmp/MediaInfo_DLL_${MEDIAINFO_VER}_GNU_FromSource.tar.xz \
+    && wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O /tmp/ffmpeg-static.tar.xz \
     && tar xJf /tmp/MediaInfo_DLL_${MEDIAINFO_VER}_GNU_FromSource.tar.xz -C /tmp \
     && tar xJf /tmp/MediaInfo_CLI_${MEDIAINFO_VER}_GNU_FromSource.tar.xz -C /tmp \
+    && tar xJf /tmp/ffmpeg-static.tar.xz /tmp \
+    && cd /tmp/ffmpeg-static/ \
+    && mv ffmpeg /usr/bin/ffmpeg \
+    && mv ffprobe /usr/bin/ffprobe \
     && cd  /tmp/MediaInfo_DLL_GNU_FromSource \
     && ./SO_Compile.sh \
     && cd /tmp/MediaInfo_DLL_GNU_FromSource/ZenLib/Project/GNU/Library \
