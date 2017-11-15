@@ -28,8 +28,8 @@ RUN export BUILD_DEPS="build-base \
     && wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O /tmp/ffmpeg-static.tar.xz \
     && tar xJf /tmp/MediaInfo_DLL_${MEDIAINFO_VER}_GNU_FromSource.tar.xz -C /tmp \
     && tar xJf /tmp/MediaInfo_CLI_${MEDIAINFO_VER}_GNU_FromSource.tar.xz -C /tmp \
-    && tar xJf /tmp/ffmpeg-static.tar.xz /tmp \
-    && cd /tmp/ffmpeg-static/ \
+    && tar xJf /tmp/ffmpeg-static.tar.xz -C /tmp \
+    && cd /tmp/ffmpeg-*/ \
     && mv ffmpeg /usr/bin/ffmpeg \
     && mv ffprobe /usr/bin/ffprobe \
     && cd  /tmp/MediaInfo_DLL_GNU_FromSource \
