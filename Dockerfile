@@ -1,21 +1,22 @@
 FROM nfxus/mono:latest
 
 ARG MEDIAINFO_VER=0.7.98
-ARG EMBY_VER=3.2.33.0
+ARG EMBY_VER=3.2.36.0
 
 ENV GID=991 \
     UID=991 \
     PREMIERE=false
 
-LABEL description="Emby based on alpine" \
-      tags="latest 3.2.33.0 3.2 3" \
-      maintainer="xataz <https://github.com/xataz>" \
-      build_ver="2017090601"
+LABEL description="Emby based on alpine based on mono 4.8" \
+      tags="latest 3.2.36.0 3.2 3" \
+      maintainer="RaymondSchnyder <https://github.com/raymondschnyder>" \
+      build_ver="20171115"
 
 RUN export BUILD_DEPS="build-base \
                         git \
                         unzip \
                         wget \
+			curl \
                         ca-certificates \
                         xz" \
     && apk add --no-cache imagemagick \
