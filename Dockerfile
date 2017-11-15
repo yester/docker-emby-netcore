@@ -56,3 +56,5 @@ RUN chmod +x /usr/local/bin/startup
 
 ENTRYPOINT ["/usr/local/bin/startup"]
 CMD ["s6-svscan", "/etc/s6.d"]
+
+HEALTHCHECK --interval=200s --timeout=100s CMD curl --fail http://localhost:8096/web || exit 1
