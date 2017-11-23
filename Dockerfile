@@ -1,16 +1,16 @@
-FROM nfxus/mono:latest
+FROM nfxus/netcore:latest
 
-ARG MEDIAINFO_VER=0.7.98
-ARG EMBY_VER=3.2.36.0
+ARG MEDIAINFO_VER=0.7.99
+ARG EMBY_VER=3.2.40.1
 
 ENV GID=991 \
     UID=991 \
     PREMIERE=false
 
 LABEL description="Emby based on alpine based on mono 4.8" \
-      tags="latest 3.2.36.0 3.2 3" \
+      tags="latest 3.2.40.0 3.2 3" \
       maintainer="RaymondSchnyder <https://github.com/raymondschnyder>" \
-      build_ver="20171115"
+      build_ver="2017112201"
 
 RUN export BUILD_DEPS="build-base \
                         git \
@@ -44,9 +44,9 @@ RUN export BUILD_DEPS="build-base \
     && cd /tmp/MediaInfo_CLI_GNU_FromSource/MediaInfo/Project/GNU/CLI \
     && make install \
     && mkdir /embyServer /embyData \
-    && wget https://github.com/MediaBrowser/Emby/releases/download/${EMBY_VER}/Emby.Mono.zip -O /tmp/Emby.Mono.zip \
+    && wget https://github.com/MediaBrowser/Emby/releases/download/${EMBY_VER}/embyserver-netcore-${EMBY_VER}.zip -O /tmp/embyserver-netcore.zip \
     && ln -s /usr/lib/libsqlite3.so.0 /usr/lib/libsqlite3.so \
-    && unzip /tmp/Emby.Mono.zip -d /embyServer \
+    && unzip /tmp/embyserver-netcore.zip -d /embyServer \
     && apk del --no-cache $BUILD_DEPS \
     && rm -rf /tmp/*
 

@@ -3,4 +3,4 @@
 cd /embyServer
 
 
-exec mono MediaBrowser.Server.Mono.exe -ffmpeg /usr/bin/ffmpeg -ffprobe /usr/bin/ffprobe
+exec dotnet --fx-version 2.1.0-preview1-25919-02 system/EmbyServer.dll -programdata /embyData

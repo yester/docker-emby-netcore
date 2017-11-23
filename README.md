@@ -3,7 +3,7 @@
 #THIS IMAGE IS BUILD WITH THE LATEST SUPPORTED MONO 4.8 FROM THE EMBY TEAM!
 
 ## Tag available
-* latest, 3.2.33.0, 3.2, 3 [(Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/emby/Dockerfile)
+* latest, 3.2.40.0, 3.2, 3 [(Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/emby/Dockerfile)
 
 ## Description
 What is [Emby](https://github.com/MediaBrowser/Emby) ?

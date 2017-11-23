@@ -1,5 +1,8 @@
 #!/bin/sh
 
+##add HEALTHCHECK SUPPORT
+apk update && apk add curl wget zip unrar
+
 ## Create user for emby
 addgroup -g ${GID} emby && adduser -H -h /embyData -s /bin/sh -G emby -u ${UID} -D emby
 
