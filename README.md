@@ -1,6 +1,6 @@
 # Emby Image
 
-#THIS IMAGE IS BUILD WITH THE LATEST SUPPORTED MONO 4.8 FROM THE EMBY TEAM!
+#THIS IMAGE IS BUILD WITH THE LATEST NIGHTY NETCORE IMAGE!
 
 ## Tag available
 * latest, 3.2.40.0, 3.2, 3 [(Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/emby/Dockerfile)
@@ -17,7 +17,7 @@ It features a REST-based API with built-in documention to facilitate client deve
 ## Build Image
 
 ```shell
-docker build -t raymondschnyder/emby github.com/raymondschyder/docker-emby.git
+docker build -t raymondschnyder/emby github.com/raymondschyder/docker-emby-netcore.git
 ```
 
 ## Configuration

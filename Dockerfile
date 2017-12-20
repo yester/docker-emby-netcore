@@ -1,14 +1,14 @@
 FROM nfxus/netcore:latest
 
 ARG MEDIAINFO_VER=0.7.99
-ARG EMBY_VER=3.2.40.1
+ARG EMBY_VER=3.2.50.5
 
 ENV GID=991 \
     UID=991 \
     PREMIERE=false
 
-LABEL description="Emby based on alpine based on mono 4.8" \
-      tags="latest 3.2.40.0 3.2 3" \
+LABEL description="Emby based on alpine based on netcore nightly" \
+      tags="latest 3.2.50.0 3.2 3" \
       maintainer="RaymondSchnyder <https://github.com/raymondschnyder>" \
       build_ver="2017112201"
 
